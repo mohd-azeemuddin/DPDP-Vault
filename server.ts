@@ -182,6 +182,23 @@ async function startServer(): Promise<void> {
     res.json({ entries, verification });
   });
 
+  app.post('/api/audit/simulate-tamper', (_req, res) => {
+    const entries = getAuditLog();
+    if (entries.length === 0) {
+      res.status(400).json({ error: 'Audit ledger is empty.' });
+      return;
+    }
+    const targetIdx = Math.min(1, entries.length - 1);
+    const cloned = structuredClone(entries);
+    cloned[targetIdx].details = `${cloned[targetIdx].details} [TAMPERED]`;
+    const verification = verifyAuditChain(cloned);
+    res.json({
+      mutatedIndex: targetIdx,
+      verification,
+      originalHash: entries[targetIdx].entryHash,
+    });
+  });
+
   app.get('/api/eval/run', (_req, res) => {
     const report = runGoldenEvalBenchmark();
     res.json(report);

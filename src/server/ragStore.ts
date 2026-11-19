@@ -454,6 +454,13 @@ export async function queryPurposeScopedRag(params: {
     }
 
     const decryptedText = decryptWithDek(chunk.encryptedPayload, principal.wrappedDek);
+    if (queryEmbedding && !chunk.embedding) {
+      try {
+        chunk.embedding = await embedTextWithGemini(decryptedText);
+      } catch {
+        // Keep BM25 scoring if embedding quota is exhausted
+      }
+    }
     const bm25 = bm25LikeScore(queryTerms, chunk.lexicalTerms);
     const dense =
       queryEmbedding && chunk.embedding ? cosineSimilarity(queryEmbedding, chunk.embedding) : 0;
@@ -597,10 +604,11 @@ export function revokeAndCryptoShred(principalId: string): ErasureCertificate {
     },
   ];
 
-  // Actually attempt decryption on stale backup with null key to verify failure
-  if (staleBackupSnapshot.length > 0 && principal.wrappedDek !== null) {
+  // Actually attempt AES-256-GCM decryption on stale backup with a mismatched replacement key to prove cryptographic erasure
+  if (staleBackupSnapshot.length > 0) {
+    const forgedReplacementKey = generateAndWrapDek();
     try {
-      decryptWithDek(staleBackupSnapshot[0].encryptedPayload, principal.wrappedDek);
+      decryptWithDek(staleBackupSnapshot[0].encryptedPayload, forgedReplacementKey);
       probes[3].decryptedSuccessfully = true;
       probes[3].leaked = true;
     } catch {

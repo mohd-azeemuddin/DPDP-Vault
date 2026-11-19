@@ -68,6 +68,7 @@ export function McpAuditWorkspace() {
   const [chainValid, setChainValid] = useState<boolean>(true);
   const [brokenIdx, setBrokenIdx] = useState<number | null>(null);
   const [auditLoading, setAuditLoading] = useState(false);
+  const [tamperReport, setTamperReport] = useState<string | null>(null);
 
   async function loadAudit() {
     setAuditLoading(true);
@@ -79,6 +80,16 @@ export function McpAuditWorkspace() {
       setBrokenIdx(data.verification?.brokenAtIndex ?? null);
     } finally {
       setAuditLoading(false);
+    }
+  }
+
+  async function runTamperTest() {
+    const res = await fetch('/api/audit/simulate-tamper', { method: 'POST' });
+    const data = await res.json();
+    if (res.ok && data.verification && !data.verification.valid) {
+      setTamperReport(
+        `In-memory mutation on entry #${data.mutatedIndex} immediately detected as invalid at chain index #${data.verification.brokenAtIndex} (live ledger unchanged).`,
+      );
     }
   }
 
@@ -200,6 +211,14 @@ export function McpAuditWorkspace() {
             )}
             <button
               type="button"
+              onClick={() => void runTamperTest()}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-amber-300 dark:border-amber-800 hover:bg-amber-50 dark:hover:bg-amber-950/40 text-amber-800 dark:text-amber-300 cursor-pointer whitespace-nowrap"
+            >
+              <ShieldAlert className="w-3.5 h-3.5" />
+              Test Tamper Detection
+            </button>
+            <button
+              type="button"
               onClick={() => void loadAudit()}
               disabled={auditLoading}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 cursor-pointer whitespace-nowrap"
@@ -209,6 +228,12 @@ export function McpAuditWorkspace() {
             </button>
           </div>
         </div>
+
+        {tamperReport && (
+          <div className="mt-4 rounded-lg border border-amber-200 dark:border-amber-900/60 bg-amber-50 dark:bg-amber-950/30 px-4 py-2.5 text-xs font-mono text-amber-900 dark:text-amber-300">
+            {tamperReport}
+          </div>
+        )}
 
         <div className="mt-5 overflow-x-auto border border-slate-200 dark:border-slate-800 rounded-lg">
           <table className="w-full text-left border-collapse text-xs">

@@ -241,8 +241,8 @@ export function detectDeterministicIndianPii(text: string): RawMatch[] {
     });
   }
 
-  // Bare 10-digit Indian mobile numbers (e.g., "mera no 9820112233 hai" or "gpay 9811223344 pe bhejo")
-  const barePhoneRegex = /\b([6-9][0-9]{9})\b/g;
+  // Bare 10-digit Indian mobile numbers (e.g., "mera no 9820112233 hai" or "98201 12233")
+  const barePhoneRegex = /\b([6-9][0-9]{4}[\s-]?[0-9]{5})\b/g;
   const phoneContextWords = /\b(phone|mob|mobile|whatsapp|wp|wa|call|number|no|num|gpay|phonepe|paytm|bhejo|contact|sampark|mera|meri|uska)\b/i;
   for (const m of text.matchAll(barePhoneRegex)) {
     if (m.index === undefined) continue;

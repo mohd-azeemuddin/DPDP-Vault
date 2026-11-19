@@ -8,12 +8,12 @@
         "kyc_verification",
         "support_chat"
       ],
-      "createdAt": "2026-11-19T11:49:22.886Z",
+      "createdAt": "2026-11-19T13:25:58.022Z",
       "wrappedDek": {
-        "wrappedB64": "DPqA9mGCJdS39X7lQ9QnA5FnGxGBKapTJ8yZ4vvd24k=",
-        "ivB64": "NAy7R5qPuMjaoEmd",
-        "tagB64": "Y7U5tUM301wRjRdZiKgA9Q==",
-        "fingerprint": "6feb183f0e44ffcc"
+        "wrappedB64": "qLvp3n266GdnhTADUyUGW1rHH3sy9k949Kxxjw8djys=",
+        "ivB64": "9uduN3Z0vdsVRVw5",
+        "tagB64": "lrnEA25Wu4uYYpYzkiJ/Dw==",
+        "fingerprint": "4fda46d6133826c2"
       }
     },
     "usr_priya_02": {
@@ -24,12 +24,12 @@
         "loan_underwriting",
         "support_chat"
       ],
-      "createdAt": "2026-11-19T11:49:22.887Z",
+      "createdAt": "2026-11-19T13:25:58.023Z",
       "wrappedDek": {
-        "wrappedB64": "C57/bvMXMMvla+o1eqJD6JHR5tTXgZiprOOIC+rjLIU=",
-        "ivB64": "7ok1SCEz8+q0XZP6",
-        "tagB64": "a3GpQ85Yxo07jR6Na3v48g==",
-        "fingerprint": "9fdcd7f3631ffacb"
+        "wrappedB64": "uZj0y4h9gew7YWqGGJG2Pg6+9hVycDd+3MHb5CmUn1Y=",
+        "ivB64": "K6opr4O/bSAy2gz0",
+        "tagB64": "RSq3VoW8lVDl1dokxXbv0g==",
+        "fingerprint": "f62e6e9d87430801"
       }
     },
     "usr_vikram_03": {
@@ -40,12 +40,12 @@
         "kyc_verification",
         "loan_underwriting"
       ],
-      "createdAt": "2026-11-19T11:49:22.887Z",
+      "createdAt": "2026-11-19T13:25:58.023Z",
       "wrappedDek": {
-        "wrappedB64": "sMdEZJ04iBmjd32G8YvDOwsRVHTwxQyl6WQkFCEF9H4=",
-        "ivB64": "2t8z9ZMuL4itdRBo",
-        "tagB64": "0ucBDuC/D6vxE5jNfyzD1w==",
-        "fingerprint": "f64ac31e3d7f2371"
+        "wrappedB64": "XJ/XSixaD3GMbPWUntKmGYudBmvMNFIge0LVfbrE5iE=",
+        "ivB64": "Ma9vtZJ+UZYxw0j3",
+        "tagB64": "Rr481YGWPeuiqG//v4O6gQ==",
+        "fingerprint": "4aa13eaca30cc45e"
       }
     }
   },
@@ -54,7 +54,7 @@
       "chunkId": "chk_usr_aarav_01_1",
       "principalId": "usr_aarav_01",
       "purpose": "kyc_verification",
-      "createdAt": "2026-11-19T11:49:22.886Z",
+      "createdAt": "2026-11-19T13:25:58.022Z",
       "redactedPlaintextHintTokens": [
         "<PERSON_NAME_1>",
         "<AADHAAR_1>",
@@ -62,9 +62,9 @@
         "<ADDRESS_1>"
       ],
       "encryptedPayload": {
-        "ciphertextB64": "QoC3jlozDuUuJG0GTavlOgDPYIRlNArc1b77Pke+6oYSv3Z+IADPPcCMRQ+IAmrxbS7x0yVkiYIO1stD0Za9+VFzUeO4F7tBed6xqDv5FgnfjAmH90OOd4pTHe8V0zktYP2g7hjkEKDgEOUM8q3lOMOdIIB3",
-        "ivB64": "++VsMAKuZ4rHm8O5",
-        "tagB64": "V6uTwOzHXSo4htfWThEjXg=="
+        "ciphertextB64": "grNacBVg15BqE+P/R8BAW5c1cLJF+rl152LgvSRALYBsfqO6RYSk2PlnjlIgB9NYh/zo6DfilTv9VW0NgP7DlpHejdaPuATnQS0PNr/48QFdPG1+46k8YmbLdR5S6hoi5XTrwQvjLtl2m6QlQwvHrWGO2Fee",
+        "ivB64": "EnKEw415UeHz9VzS",
+        "tagB64": "QxpVOnNYe4tXOt1xMfSQCA=="
       },
       "embedding": null,
       "lexicalTerms": [
@@ -92,15 +92,15 @@
       "chunkId": "chk_usr_aarav_01_2",
       "principalId": "usr_aarav_01",
       "purpose": "support_chat",
-      "createdAt": "2026-11-19T11:49:22.886Z",
+      "createdAt": "2026-11-19T13:25:58.022Z",
       "redactedPlaintextHintTokens": [
         "<UPI_ID_1>",
         "<PHONE_IN_1>"
       ],
       "encryptedPayload": {
-        "ciphertextB64": "SLr9kmRpJOjwQ592cksXyi18DVaCvlQRXd7KtT49yNGyNhui0avs9LAH40rWWAlXKhx/hhEHl2uw5U0nBeKf3+oE3t0AumGE3nEkNeGHX21giYbAOMsWcsUsWB+88zb2U+LjeScRM08XitCuKlwTYx8LQko7zgcrzVbnM40WRRXI9JohLSHME8IiRMHVjrcc+BdJhA==",
-        "ivB64": "rV6De6Sl0T/jnZL6",
-        "tagB64": "bBhK5fMY4TGmutZXtlgwfA=="
+        "ciphertextB64": "grx95C5dWX5VMbfiMorqLKn2UNeYcxzZ0+I2UTIlItlXjJo71IwHdLLsyEXzYEnJZE3fbbJcOmHpC/t5HSVtNDzU/Z8Nirx5jV7LPSQ2DY1DJdv5MS/3HWkEBvIBSmiOGKoBRtmohGTxyoPdzIQp4yJVI1OxoN0VabPG68NfoPMk55vRYO2fUIWMIzdFjGCkhKSFhA==",
+        "ivB64": "tLog4qzf4quW3Cvd",
+        "tagB64": "cn6qr725euF647BwHcswJw=="
       },
       "embedding": null,
       "lexicalTerms": [
@@ -132,15 +132,15 @@
       "chunkId": "chk_usr_priya_02_1",
       "principalId": "usr_priya_02",
       "purpose": "loan_underwriting",
-      "createdAt": "2026-11-19T11:49:22.887Z",
+      "createdAt": "2026-11-19T13:25:58.023Z",
       "redactedPlaintextHintTokens": [
         "<GSTIN_1>",
         "<IFSC_1>"
       ],
       "encryptedPayload": {
-        "ciphertextB64": "PSt+HvdKDkMkcmwv3EJOMh0jjPWvFk/0vHNqDlEd083GPUlhs3oujVjZMoYxm8RMqSufFYicZPAL3ZxH7XAN81i23xCXwMg2oSQNDU9RFz01xBCpB50A0cl0MkoqSFjgSP3a0javKHboPk/voryx37JbPidLLecZhvCwz7gQvYskWtChRFHCpndngM9WJvI=",
-        "ivB64": "S9HBG0MoMlQfqSsK",
-        "tagB64": "1wT58zVaD4lHFoSwVAKz7g=="
+        "ciphertextB64": "qrKDTFKTkHHIHMkNfNTiCyY1Kg/RIQNKOVALDmygLBJRJMS5QCXs52ppnBkCE7Rd/RFKyQ470koG+OWDlcmgbJl0H1PCAJr9RLXyqBTZ/CxJII0spyQBrw4ARn9lmcxMnpvs3rBLwELhkMSkKmYtEAbWQtdTinSuU/p149tLrH0JHX5IP/B0XuzM99mD+xE=",
+        "ivB64": "DFC/bKfbWSWeTIXY",
+        "tagB64": "1l98KND4YnAOnbG0SZ/ZCA=="
       },
       "embedding": null,
       "lexicalTerms": [
@@ -170,16 +170,16 @@
       "chunkId": "chk_usr_vikram_03_1",
       "principalId": "usr_vikram_03",
       "purpose": "kyc_verification",
-      "createdAt": "2026-11-19T11:49:22.887Z",
+      "createdAt": "2026-11-19T13:25:58.023Z",
       "redactedPlaintextHintTokens": [
         "<PAN_1>",
         "<PHONE_IN_1>",
         "<UPI_ID_1>"
       ],
       "encryptedPayload": {
-        "ciphertextB64": "FAq7XY32vtyOc5W5U5uVcSiVSGn4LHa3WBkVThgEnlkM0HMG9DASmWe4WH8reooGc8war2lo30H0kRUtgsDQ9D6JyVA/sWtyzrX79o4Bzz0JQuCo7m95Qo1LCovOj++89iF8oe3dBp/F7HLUHgDtEhE=",
-        "ivB64": "BXO2uBe9VGj5hEki",
-        "tagB64": "TmrdzsFtdQILf6mPDxXoSw=="
+        "ciphertextB64": "sDiu7W22lcl4LQpzuRPfen5beg2oup5yeHkJzHnfdGWhw/QmtSavQWpUHAqSrak+EhaBJ/rYjoJzsU60MHJpYKEYc9W4gFVjKCF9ZB6QRFHqnxtVfOopekTan4Ne/C0rldaLlUrwqDjhBU/9dURje+w=",
+        "ivB64": "IflRf7ambNlo9ewA",
+        "tagB64": "TaHgWc+JOiT5Wc0lS3wOgg=="
       },
       "embedding": null,
       "lexicalTerms": [
@@ -208,66 +208,66 @@
   "auditLog": [
     {
       "index": 0,
-      "timestamp": "2026-11-19T11:49:22.887Z",
+      "timestamp": "2026-11-19T13:25:58.022Z",
       "event": "CONSENT_GRANTED",
       "principalId": "usr_aarav_01",
       "details": "Consent artifact issued for purposes: kyc_verification, support_chat",
       "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
-      "entryHash": "35deef674dd7b8cba224b970985285c4abb3e1785ce49e4035c464aac169fee9"
+      "entryHash": "f8ca13bab34a465a04ebb7ecaef7948692207d1b7db197bc8dd618880c8172c9"
     },
     {
       "index": 1,
-      "timestamp": "2026-11-19T11:49:22.887Z",
+      "timestamp": "2026-11-19T13:25:58.022Z",
       "event": "CHUNK_INGESTED",
       "principalId": "usr_aarav_01",
-      "details": "Encrypted chunk chk_usr_aarav_01_1 under purpose=kyc_verification with DEK=6feb183f0e44ffcc",
-      "prevHash": "35deef674dd7b8cba224b970985285c4abb3e1785ce49e4035c464aac169fee9",
-      "entryHash": "0c64c28e34188329dbf8d7cdcd4e50358f414ca9857e02a964df6eaf9d93318a"
+      "details": "Encrypted chunk chk_usr_aarav_01_1 under purpose=kyc_verification with DEK=4fda46d6133826c2",
+      "prevHash": "f8ca13bab34a465a04ebb7ecaef7948692207d1b7db197bc8dd618880c8172c9",
+      "entryHash": "f5a75d5a8159ce8b68b5568ed00145b1865210f5b2d0c4383cc79380540d706d"
     },
     {
       "index": 2,
-      "timestamp": "2026-11-19T11:49:22.887Z",
+      "timestamp": "2026-11-19T13:25:58.022Z",
       "event": "CHUNK_INGESTED",
       "principalId": "usr_aarav_01",
-      "details": "Encrypted chunk chk_usr_aarav_01_2 under purpose=support_chat with DEK=6feb183f0e44ffcc",
-      "prevHash": "0c64c28e34188329dbf8d7cdcd4e50358f414ca9857e02a964df6eaf9d93318a",
-      "entryHash": "89751ca9caf7606b0f7d0324c6a473c2b60a524340555bdb82d1fbf3c18ace25"
+      "details": "Encrypted chunk chk_usr_aarav_01_2 under purpose=support_chat with DEK=4fda46d6133826c2",
+      "prevHash": "f5a75d5a8159ce8b68b5568ed00145b1865210f5b2d0c4383cc79380540d706d",
+      "entryHash": "0a92f73266f82d458dae6028ab7831073c375bdaa8d591641120e459afef40ba"
     },
     {
       "index": 3,
-      "timestamp": "2026-11-19T11:49:22.887Z",
+      "timestamp": "2026-11-19T13:25:58.023Z",
       "event": "CONSENT_GRANTED",
       "principalId": "usr_priya_02",
       "details": "Consent artifact issued for purposes: loan_underwriting, support_chat",
-      "prevHash": "89751ca9caf7606b0f7d0324c6a473c2b60a524340555bdb82d1fbf3c18ace25",
-      "entryHash": "5a0933f4d64a93d479340dc1a68647e96e5cbef0abb4ce7cdf0dcc2e4d19ece4"
+      "prevHash": "0a92f73266f82d458dae6028ab7831073c375bdaa8d591641120e459afef40ba",
+      "entryHash": "fb61e716e35358b64ee65181e58a214d57cfc0fcbc42c6ccf8023e03d316520c"
     },
     {
       "index": 4,
-      "timestamp": "2026-11-19T11:49:22.887Z",
+      "timestamp": "2026-11-19T13:25:58.023Z",
       "event": "CHUNK_INGESTED",
       "principalId": "usr_priya_02",
-      "details": "Encrypted chunk chk_usr_priya_02_1 under purpose=loan_underwriting with DEK=9fdcd7f3631ffacb",
-      "prevHash": "5a0933f4d64a93d479340dc1a68647e96e5cbef0abb4ce7cdf0dcc2e4d19ece4",
-      "entryHash": "cc92fb915b07b948778d800f9028d13bc8f1974a86a26bbf92281636d5614f54"
+      "details": "Encrypted chunk chk_usr_priya_02_1 under purpose=loan_underwriting with DEK=f62e6e9d87430801",
+      "prevHash": "fb61e716e35358b64ee65181e58a214d57cfc0fcbc42c6ccf8023e03d316520c",
+      "entryHash": "d3d7b693cb6be9b7406d9ec59c5bb11ec1946269320527cb2709eb13adae803d"
     },
     {
       "index": 5,
-      "timestamp": "2026-11-19T11:49:22.887Z",
+      "timestamp": "2026-11-19T13:25:58.023Z",
       "event": "CONSENT_GRANTED",
       "principalId": "usr_vikram_03",
       "details": "Consent artifact issued for purposes: kyc_verification, loan_underwriting",
-      "prevHash": "cc92fb915b07b948778d800f9028d13bc8f1974a86a26bbf92281636d5614f54",
-      "entryHash": "5fb41931636401762dcfc4ef58c7bcf2ff93be24c2687e885644f37d5fc9888e"
+      "prevHash": "d3d7b693cb6be9b7406d9ec59c5bb11ec1946269320527cb2709eb13adae803d",
+      "entryHash": "16d3eec3ca1528d4cb68070b64a88319e6d7ace70cff2035e7b70b6359cd6de5"
     },
     {
       "index": 6,
-      "timestamp": "2026-11-19T11:49:22.887Z",
+      "timestamp": "2026-11-19T13:25:58.023Z",
       "event": "CHUNK_INGESTED",
       "principalId": "usr_vikram_03",
-      "details": "Encrypted chunk chk_usr_vikram_03_1 under purpose=kyc_verification with DEK=f64ac31e3d7f2371",
-      "prevHash": "5fb41931636401762dcfc4ef58c7bcf2ff93be24c2687e885644f37d5fc9888e",
-      "entryHash": "20111788ae39cc92f45598c508b5b65712589ba713e3b0a053986bb33b7b46d5"
+      "details": "Encrypted chunk chk_usr_vikram_03_1 under purpose=kyc_verification with DEK=4aa13eaca30cc45e",
+      "prevHash": "16d3eec3ca1528d4cb68070b64a88319e6d7ace70cff2035e7b70b6359cd6de5",
+      "entryHash": "834572316e6db64eac2797c06810fdd059b25d39849afc39a1824c5ad415810a"
     }
   ]
 }
