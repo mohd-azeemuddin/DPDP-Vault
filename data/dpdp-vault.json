@@ -1,0 +1,273 @@
+{
+  "principals": {
+    "usr_aarav_01": {
+      "principalId": "usr_aarav_01",
+      "displayName": "Aarav Sharma (Bengaluru)",
+      "status": "ACTIVE",
+      "allowedPurposes": [
+        "kyc_verification",
+        "support_chat"
+      ],
+      "createdAt": "2026-11-19T11:49:22.886Z",
+      "wrappedDek": {
+        "wrappedB64": "DPqA9mGCJdS39X7lQ9QnA5FnGxGBKapTJ8yZ4vvd24k=",
+        "ivB64": "NAy7R5qPuMjaoEmd",
+        "tagB64": "Y7U5tUM301wRjRdZiKgA9Q==",
+        "fingerprint": "6feb183f0e44ffcc"
+      }
+    },
+    "usr_priya_02": {
+      "principalId": "usr_priya_02",
+      "displayName": "Priya Nair (Kochi)",
+      "status": "ACTIVE",
+      "allowedPurposes": [
+        "loan_underwriting",
+        "support_chat"
+      ],
+      "createdAt": "2026-11-19T11:49:22.887Z",
+      "wrappedDek": {
+        "wrappedB64": "C57/bvMXMMvla+o1eqJD6JHR5tTXgZiprOOIC+rjLIU=",
+        "ivB64": "7ok1SCEz8+q0XZP6",
+        "tagB64": "a3GpQ85Yxo07jR6Na3v48g==",
+        "fingerprint": "9fdcd7f3631ffacb"
+      }
+    },
+    "usr_vikram_03": {
+      "principalId": "usr_vikram_03",
+      "displayName": "Vikram Desai (Pune)",
+      "status": "ACTIVE",
+      "allowedPurposes": [
+        "kyc_verification",
+        "loan_underwriting"
+      ],
+      "createdAt": "2026-11-19T11:49:22.887Z",
+      "wrappedDek": {
+        "wrappedB64": "sMdEZJ04iBmjd32G8YvDOwsRVHTwxQyl6WQkFCEF9H4=",
+        "ivB64": "2t8z9ZMuL4itdRBo",
+        "tagB64": "0ucBDuC/D6vxE5jNfyzD1w==",
+        "fingerprint": "f64ac31e3d7f2371"
+      }
+    }
+  },
+  "chunks": [
+    {
+      "chunkId": "chk_usr_aarav_01_1",
+      "principalId": "usr_aarav_01",
+      "purpose": "kyc_verification",
+      "createdAt": "2026-11-19T11:49:22.886Z",
+      "redactedPlaintextHintTokens": [
+        "<PERSON_NAME_1>",
+        "<AADHAAR_1>",
+        "<PAN_1>",
+        "<ADDRESS_1>"
+      ],
+      "encryptedPayload": {
+        "ciphertextB64": "QoC3jlozDuUuJG0GTavlOgDPYIRlNArc1b77Pke+6oYSv3Z+IADPPcCMRQ+IAmrxbS7x0yVkiYIO1stD0Za9+VFzUeO4F7tBed6xqDv5FgnfjAmH90OOd4pTHe8V0zktYP2g7hjkEKDgEOUM8q3lOMOdIIB3",
+        "ivB64": "++VsMAKuZ4rHm8O5",
+        "tagB64": "V6uTwOzHXSo4htfWThEjXg=="
+      },
+      "embedding": null,
+      "lexicalTerms": [
+        "mera",
+        "naam",
+        "person",
+        "name",
+        "hai",
+        "kyc",
+        "ke",
+        "liye",
+        "aadhaar",
+        "aadhaar",
+        "aur",
+        "pan",
+        "pan",
+        "submit",
+        "kiya",
+        "hai",
+        "address",
+        "address"
+      ]
+    },
+    {
+      "chunkId": "chk_usr_aarav_01_2",
+      "principalId": "usr_aarav_01",
+      "purpose": "support_chat",
+      "createdAt": "2026-11-19T11:49:22.886Z",
+      "redactedPlaintextHintTokens": [
+        "<UPI_ID_1>",
+        "<PHONE_IN_1>"
+      ],
+      "encryptedPayload": {
+        "ciphertextB64": "SLr9kmRpJOjwQ592cksXyi18DVaCvlQRXd7KtT49yNGyNhui0avs9LAH40rWWAlXKhx/hhEHl2uw5U0nBeKf3+oE3t0AumGE3nEkNeGHX21giYbAOMsWcsUsWB+88zb2U+LjeScRM08XitCuKlwTYx8LQko7zgcrzVbnM40WRRXI9JohLSHME8IiRMHVjrcc+BdJhA==",
+        "ivB64": "rV6De6Sl0T/jnZL6",
+        "tagB64": "bBhK5fMY4TGmutZXtlgwfA=="
+      },
+      "embedding": null,
+      "lexicalTerms": [
+        "customer",
+        "aarav",
+        "sharma",
+        "reported",
+        "upi",
+        "mandate",
+        "delay",
+        "on",
+        "upi",
+        "id",
+        "mobile",
+        "phone",
+        "in",
+        "for",
+        "invoice",
+        "inv",
+        "884120334411",
+        "ticket",
+        "escalated",
+        "to",
+        "payments",
+        "ops"
+      ]
+    },
+    {
+      "chunkId": "chk_usr_priya_02_1",
+      "principalId": "usr_priya_02",
+      "purpose": "loan_underwriting",
+      "createdAt": "2026-11-19T11:49:22.887Z",
+      "redactedPlaintextHintTokens": [
+        "<GSTIN_1>",
+        "<IFSC_1>"
+      ],
+      "encryptedPayload": {
+        "ciphertextB64": "PSt+HvdKDkMkcmwv3EJOMh0jjPWvFk/0vHNqDlEd083GPUlhs3oujVjZMoYxm8RMqSufFYicZPAL3ZxH7XAN81i23xCXwMg2oSQNDU9RFz01xBCpB50A0cl0MkoqSFjgSP3a0javKHboPk/voryx37JbPidLLecZhvCwz7gQvYskWtChRFHCpndngM9WJvI=",
+        "ivB64": "S9HBG0MoMlQfqSsK",
+        "tagB64": "1wT58zVaD4lHFoSwVAKz7g=="
+      },
+      "embedding": null,
+      "lexicalTerms": [
+        "msme",
+        "working",
+        "capital",
+        "application",
+        "for",
+        "priya",
+        "nair",
+        "gstin",
+        "gstin",
+        "ifsc",
+        "ifsc",
+        "monthly",
+        "upi",
+        "turnover",
+        "inr",
+        "8l",
+        "verified",
+        "via",
+        "account",
+        "aggregator"
+      ]
+    },
+    {
+      "chunkId": "chk_usr_vikram_03_1",
+      "principalId": "usr_vikram_03",
+      "purpose": "kyc_verification",
+      "createdAt": "2026-11-19T11:49:22.887Z",
+      "redactedPlaintextHintTokens": [
+        "<PAN_1>",
+        "<PHONE_IN_1>",
+        "<UPI_ID_1>"
+      ],
+      "encryptedPayload": {
+        "ciphertextB64": "FAq7XY32vtyOc5W5U5uVcSiVSGn4LHa3WBkVThgEnlkM0HMG9DASmWe4WH8reooGc8war2lo30H0kRUtgsDQ9D6JyVA/sWtyzrX79o4Bzz0JQuCo7m95Qo1LCovOj++89iF8oe3dBp/F7HLUHgDtEhE=",
+        "ivB64": "BXO2uBe9VGj5hEki",
+        "tagB64": "TmrdzsFtdQILf6mPDxXoSw=="
+      },
+      "embedding": null,
+      "lexicalTerms": [
+        "applicant",
+        "vikram",
+        "desai",
+        "pan",
+        "pan",
+        "submitted",
+        "with",
+        "phone",
+        "phone",
+        "in",
+        "and",
+        "upi",
+        "upi",
+        "id",
+        "for",
+        "two",
+        "wheeler",
+        "loan",
+        "kyc"
+      ]
+    }
+  ],
+  "auditLog": [
+    {
+      "index": 0,
+      "timestamp": "2026-11-19T11:49:22.887Z",
+      "event": "CONSENT_GRANTED",
+      "principalId": "usr_aarav_01",
+      "details": "Consent artifact issued for purposes: kyc_verification, support_chat",
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "entryHash": "35deef674dd7b8cba224b970985285c4abb3e1785ce49e4035c464aac169fee9"
+    },
+    {
+      "index": 1,
+      "timestamp": "2026-11-19T11:49:22.887Z",
+      "event": "CHUNK_INGESTED",
+      "principalId": "usr_aarav_01",
+      "details": "Encrypted chunk chk_usr_aarav_01_1 under purpose=kyc_verification with DEK=6feb183f0e44ffcc",
+      "prevHash": "35deef674dd7b8cba224b970985285c4abb3e1785ce49e4035c464aac169fee9",
+      "entryHash": "0c64c28e34188329dbf8d7cdcd4e50358f414ca9857e02a964df6eaf9d93318a"
+    },
+    {
+      "index": 2,
+      "timestamp": "2026-11-19T11:49:22.887Z",
+      "event": "CHUNK_INGESTED",
+      "principalId": "usr_aarav_01",
+      "details": "Encrypted chunk chk_usr_aarav_01_2 under purpose=support_chat with DEK=6feb183f0e44ffcc",
+      "prevHash": "0c64c28e34188329dbf8d7cdcd4e50358f414ca9857e02a964df6eaf9d93318a",
+      "entryHash": "89751ca9caf7606b0f7d0324c6a473c2b60a524340555bdb82d1fbf3c18ace25"
+    },
+    {
+      "index": 3,
+      "timestamp": "2026-11-19T11:49:22.887Z",
+      "event": "CONSENT_GRANTED",
+      "principalId": "usr_priya_02",
+      "details": "Consent artifact issued for purposes: loan_underwriting, support_chat",
+      "prevHash": "89751ca9caf7606b0f7d0324c6a473c2b60a524340555bdb82d1fbf3c18ace25",
+      "entryHash": "5a0933f4d64a93d479340dc1a68647e96e5cbef0abb4ce7cdf0dcc2e4d19ece4"
+    },
+    {
+      "index": 4,
+      "timestamp": "2026-11-19T11:49:22.887Z",
+      "event": "CHUNK_INGESTED",
+      "principalId": "usr_priya_02",
+      "details": "Encrypted chunk chk_usr_priya_02_1 under purpose=loan_underwriting with DEK=9fdcd7f3631ffacb",
+      "prevHash": "5a0933f4d64a93d479340dc1a68647e96e5cbef0abb4ce7cdf0dcc2e4d19ece4",
+      "entryHash": "cc92fb915b07b948778d800f9028d13bc8f1974a86a26bbf92281636d5614f54"
+    },
+    {
+      "index": 5,
+      "timestamp": "2026-11-19T11:49:22.887Z",
+      "event": "CONSENT_GRANTED",
+      "principalId": "usr_vikram_03",
+      "details": "Consent artifact issued for purposes: kyc_verification, loan_underwriting",
+      "prevHash": "cc92fb915b07b948778d800f9028d13bc8f1974a86a26bbf92281636d5614f54",
+      "entryHash": "5fb41931636401762dcfc4ef58c7bcf2ff93be24c2687e885644f37d5fc9888e"
+    },
+    {
+      "index": 6,
+      "timestamp": "2026-11-19T11:49:22.887Z",
+      "event": "CHUNK_INGESTED",
+      "principalId": "usr_vikram_03",
+      "details": "Encrypted chunk chk_usr_vikram_03_1 under purpose=kyc_verification with DEK=f64ac31e3d7f2371",
+      "prevHash": "5fb41931636401762dcfc4ef58c7bcf2ff93be24c2687e885644f37d5fc9888e",
+      "entryHash": "20111788ae39cc92f45598c508b5b65712589ba713e3b0a053986bb33b7b46d5"
+    }
+  ]
+}

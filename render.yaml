@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: dpdp-vault
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: NODE_ENV=production node server.ts
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: VAULT_MASTER_KEY
+        generateValue: true

@@ -1,0 +1,6 @@
+{
+  "name": "DPDP-Vault",
+  "description": "India DPDP Act privacy firewall, Hinglish PII detector, crypto-shredding vector vault, and MCP compliance engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
