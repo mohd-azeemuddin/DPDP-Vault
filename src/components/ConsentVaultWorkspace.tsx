@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Download, ShieldAlert, ShieldCheck, Trash2 } from 'lucide-react';
+import { Download, Plus, ShieldAlert, ShieldCheck, Trash2 } from 'lucide-react';
 import type { ConsentPurpose, ErasureCertificate, PrincipalRecord } from '../shared/types.ts';
 
 interface Props {
@@ -18,6 +18,9 @@ export function ConsentVaultWorkspace({ principals, onRefresh }: Props) {
   const [busyId, setBusyId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [certificate, setCertificate] = useState<ErasureCertificate | null>(null);
+  const [newPrincipalId, setNewPrincipalId] = useState('');
+  const [newDisplayName, setNewDisplayName] = useState('');
+  const [creating, setCreating] = useState(false);
 
   async function togglePurpose(principal: PrincipalRecord, purpose: ConsentPurpose) {
     if (principal.status === 'REVOKED') return;
@@ -63,6 +66,33 @@ export function ConsentVaultWorkspace({ principals, onRefresh }: Props) {
     }
   }
 
+  async function handleCreatePrincipal(e: React.FormEvent) {
+    e.preventDefault();
+    if (!newPrincipalId.trim()) return;
+    setCreating(true);
+    setError(null);
+    try {
+      const res = await fetch('/api/principals', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          principalId: newPrincipalId.trim(),
+          displayName: newDisplayName.trim() || newPrincipalId.trim(),
+          allowedPurposes: ['kyc_verification', 'support_chat'],
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to onboard principal');
+      setNewPrincipalId('');
+      setNewDisplayName('');
+      await onRefresh();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Onboarding failed');
+    } finally {
+      setCreating(false);
+    }
+  }
+
   function downloadCertificate() {
     if (!certificate) return;
     const blob = new Blob([JSON.stringify(certificate, null, 2)], { type: 'application/json' });
@@ -91,6 +121,37 @@ export function ConsentVaultWorkspace({ principals, onRefresh }: Props) {
             {error}
           </div>
         )}
+
+        {/* Inline Onboard New Principal */}
+        <form
+          onSubmit={(e) => void handleCreatePrincipal(e)}
+          className="mt-5 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center"
+        >
+          <input
+            type="text"
+            value={newPrincipalId}
+            onChange={(e) => setNewPrincipalId(e.target.value)}
+            placeholder="New Principal ID (e.g. usr_ananya_05)"
+            pattern="[a-zA-Z0-9_-]{3,48}"
+            required
+            className="sm:w-64 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-xs font-mono text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+          />
+          <input
+            type="text"
+            value={newDisplayName}
+            onChange={(e) => setNewDisplayName(e.target.value)}
+            placeholder="Display Name & City (e.g. Ananya Rao, Hyderabad)"
+            className="flex-1 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 px-3 py-2 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+          />
+          <button
+            type="submit"
+            disabled={creating}
+            className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 text-xs font-medium rounded-lg bg-slate-900 text-white hover:bg-slate-800 dark:bg-emerald-600 dark:hover:bg-emerald-500 disabled:opacity-50 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+          >
+            <Plus className="w-3.5 h-3.5" />
+            {creating ? 'Issuing DEK...' : 'Onboard Principal'}
+          </button>
+        </form>
 
         <div className="mt-5 overflow-x-auto border border-slate-200 dark:border-slate-800 rounded-lg">
           <table className="w-full text-left border-collapse text-sm">

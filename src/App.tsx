@@ -4,11 +4,13 @@ import {
   Database,
   KeyRound,
   Moon,
+  Package,
   RotateCcw,
   ShieldCheck,
   Sun,
   Terminal,
 } from 'lucide-react';
+import { AgentInstallWorkspace } from './components/AgentInstallWorkspace.tsx';
 import { ConsentVaultWorkspace } from './components/ConsentVaultWorkspace.tsx';
 import { EvalBenchmarksWorkspace } from './components/EvalBenchmarksWorkspace.tsx';
 import { FirewallWorkspace } from './components/FirewallWorkspace.tsx';
@@ -16,7 +18,7 @@ import { McpAuditWorkspace } from './components/McpAuditWorkspace.tsx';
 import { PurposeRagWorkspace } from './components/PurposeRagWorkspace.tsx';
 import type { PrincipalRecord } from './shared/types.ts';
 
-type WorkspaceTab = 'firewall' | 'consent' | 'rag' | 'mcp' | 'evals';
+type WorkspaceTab = 'firewall' | 'consent' | 'rag' | 'mcp' | 'evals' | 'skill';
 
 const NAV_ITEMS: Array<{ id: WorkspaceTab; label: string; icon: typeof ShieldCheck }> = [
   { id: 'firewall', label: 'Privacy Firewall', icon: ShieldCheck },
@@ -24,6 +26,7 @@ const NAV_ITEMS: Array<{ id: WorkspaceTab; label: string; icon: typeof ShieldChe
   { id: 'rag', label: 'Purpose-Scoped RAG', icon: Database },
   { id: 'mcp', label: 'MCP & Audit Chain', icon: Terminal },
   { id: 'evals', label: 'Eval Benchmarks', icon: BarChart3 },
+  { id: 'skill', label: 'Agensi Skill & Install', icon: Package },
 ];
 
 export default function App() {
@@ -172,6 +175,7 @@ export default function App() {
           )}
           {activeTab === 'mcp' && <McpAuditWorkspace />}
           {activeTab === 'evals' && <EvalBenchmarksWorkspace />}
+          {activeTab === 'skill' && <AgentInstallWorkspace />}
         </main>
       </div>
     </div>

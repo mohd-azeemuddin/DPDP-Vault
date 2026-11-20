@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Database, Lock, Search, ShieldX } from 'lucide-react';
 import type { ConsentPurpose, PrincipalRecord, RagQueryResult } from '../shared/types.ts';
 
@@ -105,6 +105,11 @@ export function PurposeRagWorkspace({ principals, onRefresh }: Props) {
       setQueryLoading(false);
     }
   }
+
+  useEffect(() => {
+    void handleQuery();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="space-y-8">

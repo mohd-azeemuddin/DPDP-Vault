@@ -130,13 +130,26 @@ test('Golden evaluation suite achieves >= 95% F1 and 0 false-positive trap failu
   assert.equal(report.dpdpVault.falsePositiveTrapsFailed, 0);
 });
 
-test('MCP JSON-RPC 2.0 endpoint lists tools and executes dpdp_redact_text', async () => {
+test('MCP JSON-RPC 2.0 endpoint lists 5 tools, handles lifecycle notifications, and executes safely', async () => {
+  const notifRes = await handleMcpJsonRpc({
+    jsonrpc: '2.0',
+    method: 'notifications/initialized',
+  });
+  assert.equal(notifRes, null);
+
+  const pingRes = (await handleMcpJsonRpc({
+    jsonrpc: '2.0',
+    id: 0,
+    method: 'ping',
+  })) as { result: Record<string, unknown> };
+  assert.deepEqual(pingRes.result, {});
+
   const listRes = (await handleMcpJsonRpc({
     jsonrpc: '2.0',
     id: 1,
     method: 'tools/list',
   })) as { result: { tools: Array<{ name: string }> } };
-  assert.equal(listRes.result.tools.length, 4);
+  assert.equal(listRes.result.tools.length, 5);
 
   const callRes = (await handleMcpJsonRpc({
     jsonrpc: '2.0',
@@ -149,4 +162,15 @@ test('MCP JSON-RPC 2.0 endpoint lists tools and executes dpdp_redact_text', asyn
   })) as { result: { content: Array<{ text: string }> } };
   const parsed = JSON.parse(callRes.result.content[0].text) as { redactedText: string };
   assert.ok(parsed.redactedText.includes('<PAN_1>'));
+
+  const badPrincipalRes = (await handleMcpJsonRpc({
+    jsonrpc: '2.0',
+    id: 3,
+    method: 'tools/call',
+    params: {
+      name: 'dpdp_crypto_shred',
+      arguments: { principalId: '../etc/passwd' },
+    },
+  })) as { error: { code: number } };
+  assert.equal(badPrincipalRes.error.code, -32000);
 });

@@ -290,6 +290,34 @@ export function getAuditLog(): AuditEntry[] {
   return loadDb().auditLog;
 }
 
+export function createPrincipal(params: {
+  principalId: string;
+  displayName: string;
+  allowedPurposes: ConsentPurpose[];
+}): PrincipalRecord {
+  const db = loadDb();
+  if (db.principals[params.principalId]) {
+    throw new Error(`Principal ${params.principalId} already exists.`);
+  }
+  const wrappedDek = generateAndWrapDek();
+  db.principals[params.principalId] = {
+    principalId: params.principalId,
+    displayName: params.displayName.trim() || params.principalId,
+    status: 'ACTIVE',
+    allowedPurposes: params.allowedPurposes,
+    createdAt: new Date().toISOString(),
+    wrappedDek,
+  };
+  appendAuditEntry(
+    db,
+    'CONSENT_GRANTED',
+    params.principalId,
+    `Onboarded principal with DEK=${wrappedDek.fingerprint} and purposes: ${params.allowedPurposes.join(', ') || 'none'}`,
+  );
+  saveDb(db);
+  return listPrincipals().find((p) => p.principalId === params.principalId)!;
+}
+
 export function updatePrincipalPurposes(
   principalId: string,
   allowedPurposes: ConsentPurpose[],

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CheckCircle2, Play, RefreshCw, ShieldAlert } from 'lucide-react';
+import { CheckCircle2, Download, Play, RefreshCw, ShieldAlert } from 'lucide-react';
 import type { AuditEntry } from '../shared/types.ts';
 
 interface RpcPreset {
@@ -49,10 +49,22 @@ const RPC_PRESETS: RpcPreset[] = [
     },
   },
   {
-    label: 'initialize',
+    label: 'dpdp_audit_verify',
     payload: {
       jsonrpc: '2.0',
       id: 4,
+      method: 'tools/call',
+      params: {
+        name: 'dpdp_audit_verify',
+        arguments: {},
+      },
+    },
+  },
+  {
+    label: 'initialize',
+    payload: {
+      jsonrpc: '2.0',
+      id: 5,
       method: 'initialize',
       params: {},
     },
@@ -225,6 +237,24 @@ export function McpAuditWorkspace() {
             >
               <RefreshCw className="w-3.5 h-3.5" />
               Re-Verify Chain
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                const blob = new Blob([JSON.stringify(auditEntries, null, 2)], {
+                  type: 'application/json',
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'dpdp-audit-chain.json';
+                a.click();
+                URL.revokeObjectURL(url);
+              }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 cursor-pointer whitespace-nowrap"
+            >
+              <Download className="w-3.5 h-3.5" />
+              Export JSON
             </button>
           </div>
         </div>
